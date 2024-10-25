@@ -52,16 +52,6 @@ async function main() {
   console.log("Time Added successfully");
 
   
-
-  console.log("Claiming vested tokens for beneficiary");
-  const claimTx = await tokenVesting.connect(beneficiary).claimTokens();
-  await claimTx.wait();
-  console.log("Vested tokens claimed successfully");
-
-
-  
-
-
   const beneficiaryBalance = await token.balanceOf(beneficiary.address);
   console.log("Beneficiary's token balance:", ethers.formatEther(beneficiaryBalance), "KAN");
 }
